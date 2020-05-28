@@ -19,6 +19,8 @@ const StripeCheckoutButton = ({price, onOpened, history, emptyCart}) => {
       stripeToken: token.id
     };
 
+    
+    // Post for Payment 
     const response = await fetch(`${API_HOST}/api/payment-success`, {
       method: 'POST',
       headers: {
@@ -36,7 +38,7 @@ const StripeCheckoutButton = ({price, onOpened, history, emptyCart}) => {
     <StripeCheckout
       label='Pay Now'
       name='The Palatable Pizza'
-      currency='EUR'
+      currency='INR'
       image='https://svgshare.com/i/F0p.svg'
       description={`Your total is €${price}`}
       amount={priceForStripe}
